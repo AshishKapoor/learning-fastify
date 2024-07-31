@@ -39,14 +39,13 @@ fastify.register(require('@fastify/swagger-ui'), {
 
 fastify.register(require('./routes/items'))
 
-const start = async () => {
-  try {
-    await fastify.listen(PORT)
-  } catch (error) {
-    fastify.log.error(error)
-    process.exit(1)
-  }
+const start = () => {
+  fastify.listen({ port: PORT, host: '0.0.0.0' }, (err, address) => {
+    if (err) {
+      fastify.log.error(err)
+      process.exit(1)
+    }
+  })
 }
-
 start()
 
