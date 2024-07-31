@@ -13,7 +13,7 @@ fastify.register(require('@fastify/swagger'), {
     },
     servers: [
       {
-        url: 'http://localhost:8000',
+        url: 'http://0.0.0.0:8000',
         description: 'Development server'
       }
     ],
