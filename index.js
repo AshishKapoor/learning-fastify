@@ -1,6 +1,6 @@
 const fastify = require('fastify')({ logger: true })
 
-const PORT = 8000
+const PORT = process.env.PORT || 8000;
 
 // Swagger configuration
 fastify.register(require('@fastify/swagger'), {
